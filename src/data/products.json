@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy S21",
+    "price": 799,
+    "url": "./assets/p1.webp",
+    "quantity": 1,
+    "description": "The Samsung Galaxy S21 is a high-end smartphone with a 6.2-inch Dynamic AMOLED 2X display, a triple rear camera system, and 8GB of RAM."
+  },
+  {
+    "id": 2,
+    "name": "Apple iPhone 12 Pro",
+    "price": 999,
+    "url": "./assets/p2.jpeg",
+    "quantity": 1,
+    "description": "The Apple iPhone 12 Pro is a premium smartphone with a 6.1-inch Super Retina XDR display, a triple rear camera system, and 6GB of RAM."
+  },
+  {
+    "id": 3,
+    "name": "Google Pixel 5",
+    "price": 699,
+    "url": "./assets/p3.jpg",
+    "quantity": 1,
+    "description": "The Google Pixel 5 is a high-end smartphone with a 6-inch OLED display, a dual rear camera system, and 8GB of RAM."
+  },
+  {
+    "id": 4,
+    "name": "Sony PlayStation 5",
+    "price": 499,
+    "url": "./assets/p4.jpeg",
+    "quantity": 1,
+    "description": "The Sony PlayStation 5 is a next-generation gaming console with a powerful AMD processor, a custom graphics card, and an ultra-fast SSD."
+  },
+  {
+    "id": 5,
+    "name": "Microsoft Xbox Series X",
+    "price": 499,
+    "url": "./assets/p5.jpg",
+    "quantity": 1,
+    "description": "The Microsoft Xbox Series X is a next-generation gaming console with a custom AMD processor, a high-performance graphics card, and an ultra-fast SSD."
+  },
+  {
+    "id": 6,
+    "name": "Nintendo Switch",
+    "price": 299,
+    "url": "./assets/p6.jpeg",
+    "quantity": 1,
+    "description": "The Nintendo Switch is a hybrid gaming console that can be played on-the-go or connected to a TV. It has a 6.2-inch touchscreen display and detachable Joy-Con controllers."
+  },
+  {
+    "id": 7,
+    "name": "DJI Mavic Air 2",
+    "price": 799,
+    "url": "./assets/p7.jpeg",
+    "quantity": 1,
+    "description": "The DJI Mavic Air 2 is a high-end drone with a 4K camera, 3-axis gimbal, and a range of up to 10km."
+  },
+  {
+    "id": 8,
+    "name": "GoPro Hero 9 Black",
+    "price": 449,
+    "url": "./assets/p8.jpg",
+    "quantity": 1,
+    "description": "The GoPro Hero 9 Black is a rugged action camera with a 5K camera."
+  },
+  {
+    "id": 9,
+    "name": "Bose QuietComfort 35 II",
+    "description": "Wireless noise-cancelling headphones with up to 20 hours of battery life.",
+    "price": 299,
+    "url": "./assets/p9.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": 10,
+    "name": "Sony WH-1000XM4",
+    "description": "Wireless noise-cancelling headphones with up to 30 hours of battery life.",
+    "price": 349,
+    "url": "./assets/p10.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": 11,
+    "name": "Apple AirPods Pro",
+    "description": "Wireless earbuds with active noise cancellation and up to 4.5 hours of battery life.",
+    "price": 249,
+    "url": "./assets/p11.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": 12,
+    "name": "Bose SoundLink Revolve",
+    "description": "Portable Bluetooth speaker with 360-degree sound and up to 12 hours of battery life.",
+    "price": 199,
+    "url": "./assets/p12.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": 13,
+    "name": "JBL Flip 5",
+    "description": "Waterproof Bluetooth speaker with up to 12 hours of battery life.",
+    "price": 119,
+    "url": "./assets/p13.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": 14,
+    "name": "Amazon Echo Dot (4th Gen)",
+    "description": "Smart speaker with Alexa voice control and fabric design.",
+    "price": 49,
+    "url": "./assets/p14.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": 15,
+    "name": "Google Nest Mini",
+    "description": "Smart speaker with Google Assistant voice control and fabric design.",
+    "price": 49,
+    "url": "./assets/p15.jpeg",
+    "quantity": 1
+  }
+]
