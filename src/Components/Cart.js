@@ -70,15 +70,12 @@ function Cart(props) {
             </tr>
           </tfoot>
         </Table>
-        <div className='checkout'>
         <div className="d-flex justify-content-center">
           <Button  onClick={handleCheckout} variant="success">
             Checkout
           </Button>
         </div>
         </div>
-
-      </div>
     );
   };
 

@@ -1,6 +1,7 @@
 /* Style the Cart component */
 .cart {
   display: flex;
+  flex-direction: column;
     margin: 20px;
   }
   
@@ -16,7 +17,5 @@
   .chead{
     color: #000;
   }
-.checkout{
-    padding-bottom: 10px;
-  }
+
   
