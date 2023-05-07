@@ -3,7 +3,7 @@ import { Button, Table } from 'react-bootstrap';
 import Alert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import './cart.css'
+import './css/cart.css'
 
 
 function Cart(props) {

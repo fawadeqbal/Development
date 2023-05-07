@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Cart from "./Cart";
 import { Card, Button, Row, Col, Container} from "react-bootstrap";
-import "./products.css";
+import "./css/products.css";
 import data from '../data/products.json'
 import { useEffect } from "react";
+import AddProduct from "./AddProduct";
 
 function Products() {
 
@@ -65,10 +66,11 @@ function Products() {
     alert("Thank you for your purchase!");
     clearCart();
   };
-
+  
   return (
     <div className="product">
       <Container>
+        <AddProduct products={products} setProducts={setProducts}/>
       <Cart
           cartItems={cart}
           totalBill={total}
@@ -95,7 +97,6 @@ function Products() {
             </Col>
           ))}
         </Row>
-        
       </Container>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import './Contact.css';
+import './css/Contact.css';
 
 const Contact = () => {
   return (
@@ -26,9 +26,11 @@ const Contact = () => {
               <Form.Label>Message</Form.Label>
               <Form.Control as="textarea" rows={4} placeholder="Enter your message" />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <div className='submit'>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </div>
           </Form>
         </Col>
       </Row>

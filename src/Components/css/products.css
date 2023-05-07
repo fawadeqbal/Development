@@ -1,0 +1,19 @@
+.product{
+  display: flex;
+  flex-direction: column;
+  background-color: #227093;
+  padding-bottom: 1rem;
+}
+.product h2{
+  color: #fff;
+}
+.cart{
+  margin-top:1rem ;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+.me-auto{
+  display: flex;
+  justify-content: space-between;
+}
+
