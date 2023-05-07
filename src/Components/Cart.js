@@ -3,6 +3,7 @@ import { Button, Table } from 'react-bootstrap';
 import Alert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import './cart.css'
 
 
 function Cart(props) {
@@ -69,10 +70,12 @@ function Cart(props) {
             </tr>
           </tfoot>
         </Table>
+        <div className='checkout'>
         <div className="d-flex justify-content-center">
-          <Button onClick={handleCheckout} variant="success">
+          <Button  onClick={handleCheckout} variant="success">
             Checkout
           </Button>
+        </div>
         </div>
 
       </div>
