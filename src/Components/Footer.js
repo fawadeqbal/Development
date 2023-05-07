@@ -14,7 +14,7 @@ function Footer() {
           <Col md={4}>
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="/">Home</a></li>
+              <li><a href="/"> Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/contact">Contact Us</a></li>
             </ul>

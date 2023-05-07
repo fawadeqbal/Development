@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-
+import Contact from './Components/Contact'
 
 
 function App() {
@@ -17,6 +17,8 @@ function App() {
         <Routes>
           <Route index element={<Products />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+
         </Routes>
       </main>
       <Footer/>

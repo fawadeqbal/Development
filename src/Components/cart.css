@@ -1,5 +1,6 @@
 /* Style the Cart component */
 .cart {
+  display: flex;
     margin: 20px;
   }
   
@@ -11,5 +12,8 @@
   /* Style the buttons in the Cart component */
   button {
     margin-right: 10px;
+  }
+  .chead{
+    color: #000;
   }
   
