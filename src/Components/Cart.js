@@ -1,21 +1,24 @@
 import React from 'react';
-import { Button, Table, Alert } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
+
+import './cart.css'
 
 function Cart(props) {
-  const { cartItems, totalBill, clearCart, incrQuan, decrQuan, handleCheckout,removeItem } = props;
-  
+  const { cartItems, totalBill, clearCart, incrQuan, decrQuan, handleCheckout, removeItem } = props;
 
   const renderCartContent = () => {
     if (cartItems.length === 0) {
       return (
-        <Alert variant="info">
-          Your cart is empty. <a href="/">Shop now</a>
+        
+        <Alert severity="info">
+          Your cart is empty. 
         </Alert>
       );
     }
 
     return (
-      <>
+      <div className='cart'>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -32,7 +35,7 @@ function Cart(props) {
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td>{item.price}</td>
+                <td>{`${item.price}`}</td>
                 <td>
                   <Button onClick={() => decrQuan(item)} variant="primary" disabled={item.quantity === 1}>
                     -
@@ -69,7 +72,8 @@ function Cart(props) {
             Checkout
           </Button>
         </div>
-      </>
+        
+      </div>
     );
   };
 

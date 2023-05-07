@@ -4,9 +4,11 @@ import Store from './Components/Store';
 import Contact from './Components/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 function App() {
   return (
-    <div className="App">
+    <div className="app-container">
             <Store />
             <Contact />
             <About />

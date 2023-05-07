@@ -48,6 +48,7 @@ function Products() {
   const removeItem = (item) => {
     const updatedCart = cart.filter((product) => product.id !== item.id);
     setCart(updatedCart);
+    setTotal(total-item.price*item.quantity)
   };
 
   const clearCart = () => {
