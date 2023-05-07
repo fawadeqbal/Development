@@ -2,8 +2,6 @@ import React from 'react';
 import { Button, Table } from 'react-bootstrap';
 import Alert from '@mui/material/Alert';
 
-import './cart.css'
-
 function Cart(props) {
   const { cartItems, totalBill, clearCart, incrQuan, decrQuan, handleCheckout, removeItem } = props;
 

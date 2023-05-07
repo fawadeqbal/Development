@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import Cart from "./Cart";
-import { Card, Button, Row, Col, Container } from "react-bootstrap";
+import { Card, Button, Row, Col, Container} from "react-bootstrap";
 import "./products.css";
-import Header from "./Header";
 import data from '../data/products.json'
+import { useEffect } from "react";
 
 function Products() {
-  const [products, setProducts] = useState(data);
+
+  const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+
+  useEffect(()=>{
+    setProducts(data);
+  },[])
 
   const addToCart = (product) => {
     const existingItemIndex = cart.findIndex((item) => item.id === product.id);
@@ -62,9 +67,17 @@ function Products() {
   };
 
   return (
-    <>
-      <Header cartItems={cart} />
+    <div className="product">
       <Container>
+      <Cart
+          cartItems={cart}
+          totalBill={total}
+          clearCart={clearCart}
+          incrQuan={incrQuan}
+          decrQuan={decrQuan}
+          removeItem={removeItem}
+          handleCheckout={handleCheckout}
+        />
         <h2 className="my-3">Products</h2>
         <Row xs={1} md={2} lg={3} className="g-4">
           {products.map((product) => (
@@ -83,17 +96,9 @@ function Products() {
             </Col>
           ))}
         </Row>
-        <Cart
-          cartItems={cart}
-          totalBill={total}
-          clearCart={clearCart}
-          incrQuan={incrQuan}
-          decrQuan={decrQuan}
-          removeItem={removeItem}
-          handleCheckout={handleCheckout}
-        />
+        
       </Container>
-    </>
+    </div>
   );
 }
 

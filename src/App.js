@@ -1,18 +1,23 @@
 import './CSS/App.css';
 import About from './Components/About';
-import Store from './Components/Store';
-import Contact from './Components/Contact';
+import Products from './Components/Products'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Header from './Components/Header';
 
 
 
 function App() {
   return (
-    <div className="app-container">
-            <Store />
-            <Contact />
-            <About />
-    </div>
+    <BrowserRouter>
+      <Header/>
+      <main className="App">
+        <Routes>
+          <Route index element={<Products />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 

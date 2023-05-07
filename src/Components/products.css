@@ -1,5 +1,18 @@
-.products ol{
+.product{
   display: flex;
+  flex-direction: column;
+  background-color: #2C3A47;
 }
-
+.product h2{
+  color: aliceblue;
+}
+.cart{
+  margin-top:1rem ;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+.me-auto{
+  display: flex;
+  justify-content: space-between;
+}
 
