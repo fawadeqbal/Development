@@ -4,7 +4,7 @@ import { Card, Button, Row, Col, Container} from "react-bootstrap";
 import "./css/products.css";
 import data from '../data/products.json'
 import { useEffect } from "react";
-import AddProduct from "./AddProduct";
+// import AddProduct from "./AddProduct";
 
 function Products() {
 
@@ -70,7 +70,10 @@ function Products() {
   return (
     <div className="product">
       <Container>
-        <AddProduct products={products} setProducts={setProducts}/>
+      {/* <AddProduct 
+          products={products} 
+          setProducts={setProducts}
+      /> */}
       <Cart
           cartItems={cart}
           totalBill={total}
