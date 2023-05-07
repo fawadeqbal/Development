@@ -70,3 +70,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # E-Commerce
 # E-Commerce
+
+The @material-ui/core package has a peer dependency of react that requires version ^16.8.0 || ^17.0.0. However, the root project has installed react version ^18.2.0. This version of react is not compatible with the peer dependency required by @material-ui/core.
+
+To fix this issue, you can either downgrade your react version to ^17.0.0 or install a compatible version of @material-ui/core that supports react version ^18.2.0.
+
+If you want to force the installation of @material-ui/core with your current react version, you can try using the --force flag or --legacy-peer-deps flag with your npm command. However, be aware that this could result in an incorrect or broken dependency resolution.
+
+Here's an example of how to install @material-ui/core with the --legacy-peer-deps flag:
+# npm install --legacy-peer-deps @material-ui/core
+
