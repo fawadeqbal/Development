@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -39,4 +40,19 @@
 .me-auto{
   display: flex;
   justify-content: space-between;
+}
+.footer{
+  margin-top: 10px;
+
+}
+.nav{
+  margin: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+  
+}
+.header{
+  background-color: #cc8e35;
+  color: #fff;
+  text-decoration: line-through;
 }

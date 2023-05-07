@@ -1,10 +1,11 @@
 .product{
   display: flex;
   flex-direction: column;
-  background-color: #2C3A47;
+  background-color: #227093;
+  padding-bottom: 1rem;
 }
 .product h2{
-  color: aliceblue;
+  color: #fff;
 }
 .cart{
   margin-top:1rem ;

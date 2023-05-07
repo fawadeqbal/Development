@@ -17,6 +17,7 @@ function Cart(props) {
 
     return (
       <div className='cart'>
+        <h2 className="my-3">Cart</h2>
         <Table striped bordered hover>
           <thead>
             <tr>
