@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Row, Col, Card, Button, Toast } from 'react-bootstrap';
+import { Form, Row, Col, Card, Button, Toast, Container } from 'react-bootstrap';
 
 const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
   const [showToast, setShowToast] = useState(false); // state to show/hide toast message
@@ -15,6 +15,7 @@ const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
 
   return (
     <div style={{ marginBottom: '10px' }}>
+      <Container>
       <Form>
         <Form.Group className="search-container" controlId="search">
           <Form.Control
@@ -25,6 +26,8 @@ const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
           />
         </Form.Group>
       </Form>
+      </Container>
+      <Container>
       {searchTerm.length === 0 && (
         <div style={{ textAlign: 'center' }}>
           <h3>All Products</h3>
@@ -61,6 +64,7 @@ const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
         </Toast.Header>
         <Toast.Body>{addedProduct ? `${addedProduct.name} added to cart.` : ''}</Toast.Body>
       </Toast>
+      </Container>
     </div>
   );
 };

@@ -12,6 +12,8 @@ import data from './data/products.json'
 import { useState, useMemo, useEffect } from 'react';
 import Search from './Components/Search';
 import Cart from './Components/Cart';
+import ForgotPassword from './Components/ForgotPassword';
+import Checkout from './Components/Checkout';
 
 
 
@@ -98,6 +100,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/checkout" element={<Checkout total={total}/>} />
             <Route path="/search" element={<Search
               filteredProducts={filteredProducts}
               setSearchTerm={setSearchTerm}
