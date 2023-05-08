@@ -1,9 +1,17 @@
-import React from 'react'
-import { Form, Row, Col, Card, Button } from 'react-bootstrap'
+import React, { useState } from 'react';
+import { Form, Row, Col, Card, Button, Toast } from 'react-bootstrap';
 
-const Search = (props) => {
-  
-  const {addToCart,searchTerm,filteredProducts,setSearchTerm}=props
+const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
+  const [showToast, setShowToast] = useState(false); // state to show/hide toast message
+  const [addedProduct, setAddedProduct] = useState(null); // state to store the added product
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setAddedProduct(product);
+    setShowToast(true);
+  };
+
+  const handleToastClose = () => setShowToast(false); // handler function to hide the toast message
 
   return (
     <div style={{ marginBottom: '10px' }}>
@@ -32,12 +40,12 @@ const Search = (props) => {
       <Row xs={1} md={2} lg={3} className="g-4">
         {filteredProducts.map((product) => (
           <Col key={product.id}>
-            <Card style={{ height: "390px", width: "330px" }}>
+            <Card style={{ height: '390px', width: '330px' }}>
               <Card.Img variant="top" src={product.url} height={250} />
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{`$${product.price}`}</Card.Text>
-                <Button onClick={() => addToCart(product)} variant="primary">
+                <Button onClick={() => handleAddToCart(product)} variant="primary">
                   Add to Cart
                 </Button>
               </Card.Body>
@@ -45,8 +53,16 @@ const Search = (props) => {
           </Col>
         ))}
       </Row>
-    </div>
-  )
-}
 
-export default Search
+      {/* Toast message */}
+      <Toast show={showToast} onClose={handleToastClose} style={{ position: 'absolute', top: 10, right: 10 }}>
+        <Toast.Header>
+          <strong className="me-auto">Success</strong>
+        </Toast.Header>
+        <Toast.Body>{addedProduct ? `${addedProduct.name} added to cart.` : ''}</Toast.Body>
+      </Toast>
+    </div>
+  );
+};
+
+export default Search;

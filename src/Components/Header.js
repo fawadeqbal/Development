@@ -20,8 +20,9 @@ function Header({cart}) {
           <Nav>
             <Nav.Link as={NavLink} to="/signin" activeClassName="active" className='nav'>SignIn</Nav.Link>
             <Nav.Link as={NavLink} to="/search" activeClassName="active" className='nav'>Search Product</Nav.Link>
-            <Nav.Link as={NavLink} to="/cart" activeClassName="active" className='nav'>View Cart</Nav.Link>
-            <CartIcon cart={cart}/>
+            <Nav.Link as={NavLink} to="/cart" activeClassName="active" className='nav d-flex align-items-center'><CartIcon cart={cart}/></Nav.Link>
+
+            
             
           </Nav>
         </Navbar.Collapse>

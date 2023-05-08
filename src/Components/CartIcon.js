@@ -12,7 +12,7 @@ function CartIcon({ cart }) {
       <Typography component="span">
         <FontAwesomeIcon icon={faShoppingCart} size="lg" />
       </Typography>
-      {cartItemsCount > 0 && (
+      {cartItemsCount >= 0 && (
         <Badge color="primary" badgeContent={cartItemsCount}>
           <Typography component="span">Cart</Typography>
         </Badge>
