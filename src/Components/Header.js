@@ -30,7 +30,7 @@ function Header({ cart }) {
             <Nav.Link as={NavLink} to="/search" activeClassName="active" className='nav'>
               <FontAwesomeIcon icon={faSearch} /> Search Product
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/cart" activeClassName="active" className='nav d-flex align-items-center'>
+            <Nav.Link as={NavLink} to="/cart" activeClassName="active" className='nav'>
               <CartIcon cart={cart} />
               <span className="ms-2"><FontAwesomeIcon icon={faShoppingBasket} /></span>
             </Nav.Link>

@@ -28,13 +28,14 @@ function Cart(props) {
         </Alert>
       );
     }
+    
 
     return (
       <div className="cart">
         <Table striped bordered hover>
           <thead>
-            <td>
-              <h2 style={{ color: 'black', justifyContent: 'center' }}>Cart</h2>
+            <td className='td-head'>
+              <h2 className='head'>Cart</h2>
             </td>
             <tr>
               <th>#</th>

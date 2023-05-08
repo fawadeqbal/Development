@@ -1,7 +1,7 @@
 /* Style the Cart component */
 .cart {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
     margin: 20px;
   }
   

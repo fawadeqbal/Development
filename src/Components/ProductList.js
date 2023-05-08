@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Col, Card, Button, Toast } from 'react-bootstrap';
 
+
 const ProductList = ({ products, addToCart }) => {
   const [showToast, setShowToast] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
@@ -15,11 +16,12 @@ const ProductList = ({ products, addToCart }) => {
   };
 
   return (
-    <div>
+    <div className='productcont'>
       <Row xs={1} md={2} lg={3} className="g-4">
+      
         {products.map((product) => (
           <Col key={product.id}>
-            <Card style={{ height: '390px', width: '330px' }}>
+            <Card style={{ height: '450px', width: '400px' }}>
               <Card.Img variant="top" src={product.url} height={250} />
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
@@ -31,6 +33,7 @@ const ProductList = ({ products, addToCart }) => {
             </Card>
           </Col>
         ))}
+      
       </Row>
       <Toast
         onClose={() => setShowToast(false)}

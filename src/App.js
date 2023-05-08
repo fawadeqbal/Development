@@ -102,7 +102,8 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
             <Route path="/checkout" element={<Checkout total={total}/>} />
-            <Route path="/search" element={<Search
+            <Route path="/search" element={
+            <Search
               filteredProducts={filteredProducts}
               setSearchTerm={setSearchTerm}
               searchTerm={searchTerm}
