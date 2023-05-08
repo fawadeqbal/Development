@@ -1,18 +1,28 @@
-import React from 'react';
-import { Button, Table } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Table, Spinner } from 'react-bootstrap';
 import Alert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import './css/cart.css'
-
+import './css/cart.css';
 
 function Cart(props) {
-  const { cartItems, totalBill, clearCart, incrQuan, decrQuan, handleCheckout, removeItem } = props;
+  const { cartItems, totalBill, clearCart, incrQuan, decrQuan, removeItem } = props;
+
+  const [loading, setLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleCheckout = () => {
+    setLoading(true);
+    // Perform checkout logic here
+    setTimeout(() => {
+      setLoading(false);
+      setIsSubmitted(true);
+    }, 2000);
+  };
 
   const renderCartContent = () => {
     if (cartItems.length === 0) {
       return (
-
         <Alert severity="info">
           Your cart is empty.
         </Alert>
@@ -20,12 +30,12 @@ function Cart(props) {
     }
 
     return (
-      <div className='cart'>
-
+      <div className="cart">
         <Table striped bordered hover>
-
           <thead>
-            <td><h2 style={{ color: 'black', justifyContent: 'center' }}>Cart</h2></td>
+            <td>
+              <h2 style={{ color: 'black', justifyContent: 'center' }}>Cart</h2>
+            </td>
             <tr>
               <th>#</th>
               <th>Name</th>
@@ -52,7 +62,7 @@ function Cart(props) {
                 </td>
                 <td>{item.price * item.quantity}</td>
                 <td>
-                <FontAwesomeIcon onClick={()=> removeItem(item)} icon={faTrashAlt} size="2xl" style={{cursor:'pointer',backgroundColor:'rbg(30,48,80)'}}/>
+                  <FontAwesomeIcon onClick={() => removeItem(item)} icon={faTrashAlt} size="2xl" style={{ cursor: 'pointer', backgroundColor: 'rbg(30,48,80)' }} />
                 </td>
               </tr>
             ))}
@@ -71,11 +81,17 @@ function Cart(props) {
           </tfoot>
         </Table>
         <div className="d-flex justify-content-center">
-          <Button  onClick={handleCheckout} variant="success">
-            Checkout
-          </Button>
+          {isSubmitted ? (
+            <Alert severity="success">
+              Checkout successful!
+            </Alert>
+          ) : (
+            <Button onClick={handleCheckout} variant="success" disabled={loading}>
+              {loading ? <Spinner animation="border" size="sm" /> : 'Checkout'}
+            </Button>
+          )}
         </div>
-        </div>
+      </div>
     );
   };
 
