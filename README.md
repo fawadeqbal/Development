@@ -80,3 +80,4 @@ If you want to force the installation of @material-ui/core with your current rea
 Here's an example of how to install @material-ui/core with the --legacy-peer-deps flag:
 # npm install --legacy-peer-deps @material-ui/core
 
+# Development
