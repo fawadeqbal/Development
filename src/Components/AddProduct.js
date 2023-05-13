@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextField } from "@material-ui/core";
+import { Grid, TextField } from "@material-ui/core";
 import Button from '@mui/material/Button';
 
 const AddProduct = ({ products, setProducts }) => {
@@ -17,33 +17,44 @@ const AddProduct = ({ products, setProducts }) => {
   };
 
   return (
-    <div  >
-      <div>
-        <h1 className="text-center my-5">Add Product</h1>
-      </div>
+    <div style={{ padding: "20px" }}>
+      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Add Product</h1>
       <form onSubmit={handleSubmit}>
-        <TextField
-          id="name"
-          label="Name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <TextField
-          id="price"
-          label="Price"
-          type="number"
-          value={price}
-          onChange={(event) => setPrice(event.target.value)}
-        />
-        <TextField
-          id="url"
-          label="Image URL"
-          value={url}
-          onChange={(event) => setUrl(event.target.value)}
-        />
-        <Button variant="contained" type="submit">
-          Add Product
-        </Button>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="name"
+              label="Name"
+              fullWidth
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="price"
+              label="Price"
+              fullWidth
+              type="number"
+              value={price}
+              onChange={(event) => setPrice(event.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              id="url"
+              label="Image URL"
+              fullWidth
+              value={url}
+              onChange={(event) => setUrl(event.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Button variant="contained" type="submit" fullWidth size="small">
+              Add Product
+            </Button>
+          </Grid>
+        </Grid>
       </form>
     </div>
   );
