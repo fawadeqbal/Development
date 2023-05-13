@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Form, Button, Spinner, Container, Row, Col } from "react-bootstrap";
-import './css/Contact.css'
+import { Button, Container, TextField, Typography, CircularProgress, Grid } from "@mui/material";
+import './css/Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,54 +29,56 @@ const Contact = () => {
 
   return (
     <Container className="contact">
-      <Row className="justify-content-center">
-        <Col lg={8}>
-          <h1 className="text-center my-5">Contact Us</h1>
-          <p className="lead">Have a question or comment? We'd love to hear from you!</p>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
-        <Col lg={8}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter your email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicMessage">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={4}
-                placeholder="Enter your message"
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
+      <Typography variant="h4" component="h1" align="center" gutterBottom>
+        Contact Us
+      </Typography>
+      <Typography variant="subtitle1" align="center" gutterBottom>
+        Have a question or comment? We'd love to hear from you!
+      </Typography>
+      <Grid container justifyContent="center">
+        <Grid item xs={12} md={8}>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              id="name"
+              name="name"
+              label="Name"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+            <TextField
+              id="email"
+              name="email"
+              label="Email"
+              type="email"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            <TextField
+              id="message"
+              name="message"
+              label="Message"
+              variant="outlined"
+              fullWidth
+              multiline
+              rows={4}
+              margin="normal"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            />
             <div className="submit">
-              <Button variant="primary" type="submit" disabled={isLoading}>
+              <Button variant="contained" color="primary" type="submit" disabled={isLoading}>
                 {isLoading ? (
                   <>
-                    <Spinner animation="border" size="sm" /> Sending...
+                    <CircularProgress size={24} /> Sending...
                   </>
                 ) : (
                   "Submit"
@@ -85,12 +87,14 @@ const Contact = () => {
             </div>
             {isSubmitted && (
               <div className="mt-3">
-                <p className="text-success">Thanks for your message!</p>
+                <Typography variant="body1" align="center" className="text-success">
+                  Thanks for your message!
+                </Typography>
               </div>
             )}
-          </Form>
-        </Col>
-      </Row>
+          </form>
+        </Grid>
+      </Grid>
     </Container>
   );
 };
