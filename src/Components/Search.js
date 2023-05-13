@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Form, Row, Col, Card, Button, Toast, Container } from 'react-bootstrap';
+import { Form, Row, Col, Card, Toast, Container } from 'react-bootstrap';
+import './css/search.css'
+import { ShoppingCartRounded } from '@mui/icons-material';
+import Button from '@mui/material/Button';
 
 const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
   const [showToast, setShowToast] = useState(false); // state to show/hide toast message
@@ -14,7 +17,7 @@ const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
   const handleToastClose = () => setShowToast(false); // handler function to hide the toast message
 
   return (
-    <div style={{ marginBottom: '10px' }}>
+    <div className='search-page'>
       <Container>
       <Form>
         <Form.Group className="search-container" controlId="search">
@@ -33,7 +36,7 @@ const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
           <h3>All Products</h3>
         </div>
       )}
-
+      <div className='products-search'>
       {searchTerm.length > 0 && filteredProducts.length === 0 && (
         <div style={{ textAlign: 'center' }}>
           <h3>No products found</h3>
@@ -48,15 +51,15 @@ const Search = ({ addToCart, searchTerm, filteredProducts, setSearchTerm }) => {
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{`$${product.price}`}</Card.Text>
-                <Button onClick={() => handleAddToCart(product)} variant="primary">
-                  Add to Cart
+                <Button onClick={() => handleAddToCart(product)} variant="contained" startIcon={<ShoppingCartRounded />}>
+                    Add to Cart
                 </Button>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
-
+      </div>
       {/* Toast message */}
       <Toast show={showToast} onClose={handleToastClose} style={{ position: 'absolute', top: 10, right: 10 }}>
         <Toast.Header>

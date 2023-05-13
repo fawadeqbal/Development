@@ -6,13 +6,13 @@ function CartIcon({ cart }) {
   }, 0);
 
   return (
-    <div>
+    <>
       {cartItemsCount >= 0 && (
         <Badge color="primary" badgeContent={cartItemsCount}>
           <Typography component="span">Cart</Typography>
         </Badge>
       )}
-    </div>
+    </>
   );
 }
 

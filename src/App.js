@@ -2,7 +2,7 @@ import './CSS/App.css';
 import About from './Components/About';
 import Products from './Components/Products'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Contact from './Components/Contact'
@@ -14,6 +14,7 @@ import Search from './Components/Search';
 import Cart from './Components/Cart';
 import ForgotPassword from './Components/ForgotPassword';
 import Checkout from './Components/Checkout';
+import AddProduct from './Components/AddProduct'
 
 
 
@@ -86,41 +87,44 @@ function App() {
 
   return (
     <div className="App">
+      <Header cart={cart} />
+      <main >
+        <Routes>
+          <Route path='/Web-app' element={<Products
+            products={products}
+            addToCart={addToCart}
 
-      <BrowserRouter>
-        <Header cart={cart} />
-        <main >
-          <Routes>
-            <Route index element={<Products
+          />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout total={total}/>} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/addproduct" element={
+            <AddProduct
               products={products}
-              addToCart={addToCart}
-
-            />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/forgotpassword" element={<ForgotPassword />} />
-            <Route path="/checkout" element={<Checkout total={total}/>} />
-            <Route path="/search" element={<Search
-              filteredProducts={filteredProducts}
-              setSearchTerm={setSearchTerm}
-              searchTerm={searchTerm}
-              addToCart={addToCart}
-            />} />
-            <Route path="/cart" element={<Cart
-              cartItems={cart}
-              totalBill={total}
-              clearCart={clearCart}
-              incrQuan={incrQuan}
-              decrQuan={decrQuan}
-              removeItem={removeItem}
-              handleCheckout={handleCheckout}
-            />} />
-          </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
+              setProducts={setProducts}
+            />}
+          />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/search" element={<Search
+            filteredProducts={filteredProducts}
+            setSearchTerm={setSearchTerm}
+            searchTerm={searchTerm}
+            addToCart={addToCart}
+          />} />
+          <Route path="/cart" element={<Cart
+            cartItems={cart}
+            totalBill={total}
+            clearCart={clearCart}
+            incrQuan={incrQuan}
+            decrQuan={decrQuan}
+            removeItem={removeItem}
+            handleCheckout={handleCheckout}
+          />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }

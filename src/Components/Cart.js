@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Button, Table, Spinner } from 'react-bootstrap';
+import React from 'react';
+import { Button, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -7,18 +8,6 @@ import './css/cart.css';
 
 function Cart(props) {
   const { cartItems, totalBill, clearCart, incrQuan, decrQuan, removeItem } = props;
-
-  const [loading, setLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleCheckout = () => {
-    setLoading(true);
-    // Perform checkout logic here
-    setTimeout(() => {
-      setLoading(false);
-      setIsSubmitted(true);
-    }, 2000);
-  };
 
   const renderCartContent = () => {
     if (cartItems.length === 0) {
@@ -31,11 +20,13 @@ function Cart(props) {
 
     return (
       <div className="cart">
-        <Table striped bordered hover>
+        <Table striped bordered hover style={{ textAlign: 'center' }}>
           <thead>
-            <td>
-              <h2 style={{ color: 'black', justifyContent: 'center' }}>Cart</h2>
-            </td>
+            <tr>
+              <th colSpan="6">
+                <h2 style={{ color: 'black' }}>Shopping Cart</h2>
+              </th>
+            </tr>
             <tr>
               <th>#</th>
               <th>Name</th>
@@ -81,15 +72,7 @@ function Cart(props) {
           </tfoot>
         </Table>
         <div className="d-flex justify-content-center">
-          {isSubmitted ? (
-            <Alert severity="success">
-              Checkout successful!
-            </Alert>
-          ) : (
-            <Button onClick={handleCheckout} variant="success" disabled={loading}>
-              {loading ? <Spinner animation="border" size="sm" /> : 'Checkout'}
-            </Button>
-          )}
+          <Button variant="success"><Link to='../checkout' style={{color:'white',textDecoration:'none'}}>Checkout</Link></Button>
         </div>
       </div>
     );

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { TextField, Button } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
+import Button from '@mui/material/Button';
 
 const AddProduct = ({ products, setProducts }) => {
   const [name, setName] = useState("");
@@ -16,7 +17,10 @@ const AddProduct = ({ products, setProducts }) => {
   };
 
   return (
-    <div>
+    <div  >
+      <div>
+        <h1 className="text-center my-5">Add Product</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <TextField
           id="name"
@@ -37,7 +41,7 @@ const AddProduct = ({ products, setProducts }) => {
           value={url}
           onChange={(event) => setUrl(event.target.value)}
         />
-        <Button variant="contained" color="primary" type="submit">
+        <Button variant="contained" type="submit">
           Add Product
         </Button>
       </form>

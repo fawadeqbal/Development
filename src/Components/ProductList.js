@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Row, Col, Card, Button, Toast } from 'react-bootstrap';
+import { Row, Col, Card, Toast } from 'react-bootstrap';
+import Button from '@mui/material/Button';
+import { ShoppingCartRounded } from '@mui/icons-material';
 
 const ProductList = ({ products, addToCart }) => {
   const [showToast, setShowToast] = useState(false);
@@ -13,7 +15,6 @@ const ProductList = ({ products, addToCart }) => {
       setShowToast(false);
     }, 3000);
   };
-
   return (
     <div>
       <Row xs={1} md={2} lg={3} className="g-4">
@@ -24,7 +25,7 @@ const ProductList = ({ products, addToCart }) => {
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{`$${product.price}`}</Card.Text>
-                <Button onClick={() => handleAddToCart(product)} variant="primary">
+                <Button onClick={() => handleAddToCart(product)} variant="contained" startIcon={<ShoppingCartRounded />}>
                   Add to Cart
                 </Button>
               </Card.Body>
