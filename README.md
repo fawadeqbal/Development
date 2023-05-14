@@ -1,3 +1,3 @@
 # Web-app
 
-# https://fawadeqbal.github.com/Web-app
+# https://fawadeqbal.github.io/Web-app
