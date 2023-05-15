@@ -62,7 +62,7 @@ function Cart(props) {
             <tr>
               <td colSpan="2">
                 <Button onClick={clearCart} variant="warning">
-                  Clear Cart
+                  Clear Cart 
                 </Button>
               </td>
               <td colSpan="4" className="text-right">
