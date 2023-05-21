@@ -46,7 +46,7 @@ function ForgotPassword() {
     const classes = useStyles();
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="xs" >
             <div className={classes.root}>
                 <Card className={classes.card}>
                     <CardHeader title="Forgot Password" />
@@ -56,6 +56,7 @@ function ForgotPassword() {
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <TextField
+                                        className='change'
                                         variant="outlined"
                                         required
                                         fullWidth

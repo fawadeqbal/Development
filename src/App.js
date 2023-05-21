@@ -93,7 +93,6 @@ function App() {
           <Route path='/Web-app' element={<Products
             products={products}
             addToCart={addToCart}
-
           />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
